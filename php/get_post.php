@@ -12,9 +12,8 @@ if (isset($_SESSION['unique_id'])) {
         while ($row = mysqli_fetch_assoc($query)) {
 
             $output .= '<div class="chat incoming">
-            <div class="user">
-            <img src="php/images/' . $row['img'] . '" alt="">
-            
+            <div class="user" name="post_id" value=' . $row['post_id'] . '>
+            <img src="php/images/' . $row['img'] . '" alt=""> 
             <span>' . $row['fname'] . " " . $row['lname'] . '</span>
             <p>' . $row['date'] . '</p>
             </div>

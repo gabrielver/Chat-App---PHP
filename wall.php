@@ -20,10 +20,10 @@ if (!isset($_SESSION['unique_id'])) {
     <div class="wrapper">
         <section class="chat-area">
             <header>
+
                 <?php
                 include_once "php/config.php";
-                $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
-                $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$user_id}");
+                $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$_SESSION['unique_id']}");
                 if (mysqli_num_rows($sql) > 0) {
                     $row = mysqli_fetch_assoc($sql);
                 }
@@ -34,6 +34,7 @@ if (!isset($_SESSION['unique_id'])) {
                     <span><?php echo $row['fname'] . " " . $row['lname'] ?></span>
                     <p><?php echo $row['status']; ?></p>
                 </div>
+
             </header>
             <form action="#" class="typing-area">
                 <input type="text" name="outgoing_id" value="<?php echo $_SESSION['unique_id']; ?>" hidden>

@@ -53,6 +53,8 @@ setInterval(()=>{
             let data = xhr.response;
             if(!chatBox.classList.contains("active")){ //si chatbox active, pas de scroll. si pas active, scroll to bottom
                 chatBox.innerHTML = data;
+                likeBtn = document.querySelector(".details button");
+                console.log(likeBtn);
             }
           }
       }
@@ -63,18 +65,16 @@ setInterval(()=>{
 }, 500); //this fonction will run frequently after 500ms
 
 
-// likeBtn = document.querySelector(".like");
+
 
 // likeBtn.onclick = ()=>{
 //     //we start Ajax
 //     let xhr = new XMLHttpRequest(); //creating XML object
-//     xhr.open("POST", "php/insert_post.php", true);
+//     xhr.open("POST", "php/like-dislike.php", true);
 //     xhr.onload = ()=>{
 //       if(xhr.readyState === XMLHttpRequest.DONE){
 //           if(xhr.status === 200){
-               
-             
-//              inputField.value = ""; //once message inserted into database, then leave blank in the input field
+// console.log(`c'est good`)
 //           } 
 //       }
 //     }
