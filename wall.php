@@ -54,6 +54,7 @@ if (!isset($_SESSION['unique_id'])) {
 
     <script src="javascript/wall.js"></script>
 
+
 </body>
 
 </html>

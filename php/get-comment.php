@@ -6,13 +6,13 @@ if (isset($_SESSION['unique_id'])) {
 
     $output = "";
 
-    $sql = "SELECT * FROM post LEFT JOIN users ON users.unique_id = post.post_user_id ORDER BY post_id DESC";
+    $sql = "SELECT * FROM comment LEFT JOIN post ON post.post_id = comment.comment_post_id ORDER BY comment_post_id DESC";
     $query = mysqli_query($conn, $sql);
     if (mysqli_num_rows($query) > 0) {
         while ($row = mysqli_fetch_assoc($query)) {
 
             $output .= '<div class="chat incoming">
-            <div class="user">
+            <div class="user" name="post_id" value=' . $row['post_id'] . '>
             <img src="php/images/' . $row['img'] . '" alt=""> 
             <span>' . $row['fname'] . " " . $row['lname'] . '</span>
             <p>' . $row['date'] . '</p>
@@ -26,13 +26,11 @@ if (isset($_SESSION['unique_id'])) {
             </div>
             <div class="comment">
             <form action="#" class="typing-comment">
-                <input type="text" name="post_id" value="' . $row['post_id'] . '" hidden>
                 <input type="text" name="outgoing_id" value="' . $_SESSION['unique_id'] . '" hidden>
                 <input type="text" name="comment" class="input-comment" placeholder="Type a comment here..." autocomplete="off">
                 <button><i class="fab fa-telegram-plane"></i></button>
                 
             </div>
-            <div class="commentBox"> </div>
             </div>';
         }
     } else {
