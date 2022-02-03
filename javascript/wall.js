@@ -5,6 +5,7 @@
 // const form2 = document.querySelector(".typing-comment"),
 // inputComment = form2.querySelector(".input-field"),
 // sendcomment = form2.querySelector("button");
+
 // sendBtn.onclick = ()=>{
 //     //we start Ajax
 //     let xhr = new XMLHttpRequest(); //creating XML object
@@ -95,7 +96,7 @@ chatBox.onmouseleave = ()=>{
 setInterval(()=>{
     //we start Ajax
     let xhr = new XMLHttpRequest(); //creating XML object
-    xhr.open("POST", "php/get_post.php", true);
+    xhr.open("GET", "php/get_post.php", true);
     xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){

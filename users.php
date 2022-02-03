@@ -27,8 +27,8 @@ if (!isset($_SESSION['unique_id'])) {
         <a href="php/logout.php?logout_id=<?php echo $row['unique_id']; ?>" class="logout">Logout</a>
       </header>
       <div class="wall">
-        <a href="wall.php?user_id= $_SESSION['unique_id'] . '">
-          <p>Access to the main WALL</p>
+        <a href="wall.php?user_id=<?php echo $row['unique_id']; ?>">
+          <p style="background: blue;color: white;border-radius: 20px;display: flex;justify-content: center;box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);padding: 8px;">Access to the main WALL</p>
         </a>
       </div>
       <div class="search">

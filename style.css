@@ -155,6 +155,10 @@ body {
   border-radius: 5px;
   font-size: 17px;
 }
+.users .wall p {
+  display: flex;
+  justify-content: center;
+}
 .users .search {
   margin: 20px 0;
   display: flex;
